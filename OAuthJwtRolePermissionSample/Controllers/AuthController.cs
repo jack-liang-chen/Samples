@@ -23,8 +23,11 @@ public class AuthController : ControllerBase
             {
                 new(ClaimTypes.Name, userLogin.Username),
 
+                //!!!!!!!!!!!!!!!!!!!!!!!---NOTIFICATION---!!!!!!!!!!!!!!!
                 // 启用下面这行，就可以访问ProtectedController.GetPageX
                 //new(ClaimTypes.Role, "Admin"), // 这里你可以根据实际情况设置用户角色
+                
+            
                 new("permissions", "CanAccessResourceY"), // 添加具体权限声明
                 new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new(JwtRegisteredClaimNames.Sub, userLogin.Username),

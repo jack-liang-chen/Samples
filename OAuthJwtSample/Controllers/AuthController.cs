@@ -8,18 +8,13 @@ namespace OAuthJwtSample.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class AuthController(IConfiguration configuration) : ControllerBase
+public class AuthController() : ControllerBase
 {
-    private readonly IConfiguration _configuration = configuration;
-
     [HttpPost("login")]
     public IActionResult Login([FromBody] UserLogin userLogin)
     {
-        // Validate the user credentials (this is a simplified example)
-        if (userLogin.Username != "test" || userLogin.Password != "password")
-        {
+        if (userLogin.Username != "test" || userLogin.Password != "password") 
             return Unauthorized();
-        }
 
         // Generate JWT token
         var tokenHandler = new JwtSecurityTokenHandler();
@@ -31,9 +26,10 @@ public class AuthController(IConfiguration configuration) : ControllerBase
                 new(ClaimTypes.Name, userLogin.Username)
             }),
             Expires = DateTime.UtcNow.AddHours(1),
-            Issuer = "yourIssuer",
-            Audience = "yourAudience",
-            SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            Issuer = "https://auth.example.com",
+            Audience = "https://api.example.com",
+            SigningCredentials = new SigningCredentials(
+                new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
         };
         var token = tokenHandler.CreateToken(tokenDescriptor);
         var tokenString = tokenHandler.WriteToken(token);

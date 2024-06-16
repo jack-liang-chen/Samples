@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuthJwtSample", "OAuthJwtSample\OAuthJwtSample.csproj", "{475BA249-50EE-475E-9C83-AEA9FC57571C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuthJwtRolePermissionSample", "OAuthJwtRolePermissionSample\OAuthJwtRolePermissionSample.csproj", "{87B0C622-8F86-42E4-85C9-A11228CDC42D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{475BA249-50EE-475E-9C83-AEA9FC57571C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{475BA249-50EE-475E-9C83-AEA9FC57571C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{475BA249-50EE-475E-9C83-AEA9FC57571C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87B0C622-8F86-42E4-85C9-A11228CDC42D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87B0C622-8F86-42E4-85C9-A11228CDC42D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87B0C622-8F86-42E4-85C9-A11228CDC42D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87B0C622-8F86-42E4-85C9-A11228CDC42D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -70,6 +70,16 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddAuthorization();
 
+// 添加 CORS
+builder.Services.AddCors(optoins =>
+{
+    optoins.AddPolicy("AllowReactApp", x =>
+        x.WithOrigins("http://localhost:3000")
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+        .AllowCredentials());
+});
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -80,6 +90,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+// 使用 CORS
+app.UseCors("AllowReactApp");
 
 app.MapControllers();
 

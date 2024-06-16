@@ -1,0 +1,13 @@
+@OAuthJwtSample_HostAddress = http://localhost:5027
+
+POST {{OAuthJwtSample_HostAddress}}/api/auth/login/
+Content-Type: application/json
+
+{
+    "Username": "test",
+    "Password": "password"
+}
+###
+
+GET {{OAuthJwtSample_HostAddress}}/api/protected
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRlc3QiLCJuYmYiOjE3MTg1MDI1NzIsImV4cCI6MTcxODUwNjE3MiwiaWF0IjoxNzE4NTAyNTcyLCJpc3MiOiJ5b3VySXNzdWVyIiwiYXVkIjoieW91ckF1ZGllbmNlIn0.eBf5FipM5hgFBOeB8Z-VgngR2USeLvfoitJIZVwy4LU

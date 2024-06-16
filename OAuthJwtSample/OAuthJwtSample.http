@@ -9,5 +9,24 @@ Content-Type: application/json
 }
 ###
 
+POST {{OAuthJwtSample_HostAddress}}/api/auth/login2/
+Content-Type: application/json
+
+{
+    "Username": "test",
+    "Password": "password"
+}
+###
+
+POST {{OAuthJwtSample_HostAddress}}/api/auth/refresh/
+Content-Type: application/json
+
+{
+  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRlc3QiLCJuYmYiOjE3MTg1MDU2OTksImV4cCI6MTcxODUwOTI5OSwiaWF0IjoxNzE4NTA1Njk5LCJpc3MiOiJodHRwczovL2F1dGguZXhhbXBsZS5jb20iLCJhdWQiOiJodHRwczovL2FwaS5leGFtcGxlLmNvbSJ9.vbypavd12HfGv9sbe1v-Oo8Fxsl6Kcq-y0dtrF0H5os",
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRlc3QiLCJuYmYiOjE3MTg1MDU2OTksImV4cCI6MTcxOTExMDQ5OSwiaWF0IjoxNzE4NTA1Njk5LCJpc3MiOiJodHRwczovL2F1dGguZXhhbXBsZS5jb20iLCJhdWQiOiJodHRwczovL2FwaS5leGFtcGxlLmNvbSJ9.vzRPKyLCRL2Low8bgt0VqA1sn2RQTtAFMhwHldqT9do"
+}
+
+###
+
 GET {{OAuthJwtSample_HostAddress}}/api/protected
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRlc3QiLCJuYmYiOjE3MTg1MDI1NzIsImV4cCI6MTcxODUwNjE3MiwiaWF0IjoxNzE4NTAyNTcyLCJpc3MiOiJ5b3VySXNzdWVyIiwiYXVkIjoieW91ckF1ZGllbmNlIn0.eBf5FipM5hgFBOeB8Z-VgngR2USeLvfoitJIZVwy4LU
